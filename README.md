@@ -1,4 +1,4 @@
-# helm chart for ejabberd
+# helm chart for ejabberd 1
 
 This repository holds a helm chart for [ejabberd](https://github.com/processone/ejabberd)
 which
