@@ -12,7 +12,6 @@ Create the chart image name.
 {{- define "ejabberd.image-name" -}}
 {{- printf "%s/%s:%s" .Values.image.registry .Values.image.repository (.Values.image.tag | default .Chart.AppVersion) }}
 {{- end -}}
-{{/*
 
 {{/*
 Create a default fully qualified app name.
