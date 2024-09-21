@@ -30,6 +30,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: pod-reader
+  namespace: {{ template "ejabberd.namespace" . }}
 rules:
 - apiGroups: ['']
   resources: ['pods']
@@ -39,6 +40,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: ejabberd-read-pods
+  namespace: {{ template "ejabberd.namespace" . }}
 subjects:
 - kind: ServiceAccount
   name: {{ include "ejabberd.serviceAccountName" . }}
@@ -52,6 +54,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: leases
+  namespace: {{ template "ejabberd.namespace" . }}
 rules:
 - apiGroups: ['coordination.k8s.io']
   resources: ['leases']
@@ -61,6 +64,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: ejabberd-update-leases
+  namespace: {{ template "ejabberd.namespace" . }}
 subjects:
 - kind: ServiceAccount
   name: {{ include "ejabberd.serviceAccountName" . }}
