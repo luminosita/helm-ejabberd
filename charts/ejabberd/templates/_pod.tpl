@@ -71,6 +71,8 @@
         volumeMounts:
           - name: {{ include "ejabberd.fullname" . }}-certs
             mountPath: /opt/ejabberd/certs
+          - name: ejabberd-cacert
+            mountPath: /opt/ejabberd/cacert
         {{- range $name := .Values.certFiles.secretName }}
           - name: ejabberd-certs-{{ $name | replace "." "-" }}
             mountPath: /tmp/certs/{{ $name }}
@@ -171,6 +173,9 @@
             mountPath: /opt/ejabberd/certs
             readOnly: true
         {{- else }}
+          - name: ejabberd-cacert
+            mountPath: /opt/ejabberd/cacert
+            readOnly: true
         {{- range $name := .Values.certFiles.secretName }}
           - name: ejabberd-certs-{{ $name | replace "." "-" }}
             mountPath: /opt/ejabberd/certs/{{ $name }}
@@ -279,6 +284,9 @@
         - name: {{ include "ejabberd.fullname" . }}-certs
           emptyDir: {}
         {{- end }}
+        - name: ejabberd-cacert
+          secret:
+            secretName: {{ .Values.cacert.secretName }}
         {{- range $name := .Values.certFiles.secretName }}
         - name: ejabberd-certs-{{ $name | replace "." "-" }}
           secret:
