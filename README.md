@@ -1,6 +1,6 @@
 # helm chart for ejabberd
 
-1 This repository holds a helm chart for [ejabberd](https://github.com/processone/ejabberd)
+This repository holds a helm chart for [ejabberd](https://github.com/processone/ejabberd)
 which
 > [...] is an open-source, robust, scalable and extensible realtime platform
 > built using Erlang/OTP, that includes XMPP Server, MQTT Broker and SIP Service.
