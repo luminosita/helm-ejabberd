@@ -1,6 +1,6 @@
 apiVersion: v2
 name: ejabberd
-description: ejabberd XMPP server helm chart
+description: ejabberd XMPP server helm chart Milos
 type: application
 version: 0.8.1
 appVersion: "24.06-k8s1"
