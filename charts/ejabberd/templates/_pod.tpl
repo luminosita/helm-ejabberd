@@ -72,10 +72,12 @@
           - name: {{ include "ejabberd.fullname" . }}-certs
             mountPath: /opt/ejabberd/certs
           - name: ejabberd-cacert
-            mountPath: /opt/ejabberd/cacert
+            mountPath: /opt/ejabberd/cacert/ca.crt
+            subPath: ca.crt
         {{- range $name := .Values.certFiles.secretName }}
           - name: ejabberd-certs-{{ $name | replace "." "-" }}
-            mountPath: /tmp/certs/{{ $name }}
+            mountPath: /tmp/certs/{{ $name }}/tls-combined.pem
+            subPath: tls-combined.pem
         {{- end }}
           - name: {{ include "ejabberd.fullname" . }}-config
             mountPath: /opt/ejabberd/conf
@@ -174,11 +176,13 @@
             readOnly: true
         {{- else }}
           - name: ejabberd-cacert
-            mountPath: /opt/ejabberd/cacert
+            mountPath: /opt/ejabberd/cacert/ca.crt
+            subPath: ca.crt
             readOnly: true
         {{- range $name := .Values.certFiles.secretName }}
           - name: ejabberd-certs-{{ $name | replace "." "-" }}
-            mountPath: /opt/ejabberd/certs/{{ $name }}
+            mountPath: /opt/ejabberd/certs/{{ $name }}/tls-combined.pem
+            subPath: tls-combined.pem
             readOnly: true
         {{- end }}
         {{- end }}
