@@ -3,9 +3,9 @@ entries:
   ejabberd:
   - apiVersion: v2
     appVersion: 24.06-k8s1
-    created: "2024-09-26T00:15:30.038512+02:00"
+    created: "2024-09-26T00:21:25.374573+02:00"
     description: ejabberd XMPP server helm chart Milos
-    digest: 531ec9f823ca700743c949f50c753bb63f289d52c48a749e5d295242e6ca0ce2
+    digest: a96bf89a6f5abdc1e975e399984447822f10d91190aed94d0471fde13de6aa6d
     keywords:
     - xmpp
     - mqtt
@@ -14,6 +14,6 @@ entries:
     name: ejabberd
     type: application
     urls:
-    - https://luminosita.github.io/ejabberd/ejabberd-0.8.5.tgz
+    - https://luminosita.github.io/helm-ejabberd/ejabberd-0.8.5.tgz
     version: 0.8.5
-generated: "2024-09-26T00:15:30.035404+02:00"
+generated: "2024-09-26T00:21:25.372432+02:00"
