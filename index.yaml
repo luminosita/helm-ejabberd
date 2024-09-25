@@ -4,7 +4,7 @@ entries:
   - apiVersion: v2
     appVersion: 24.06-k8s1
     created: "2024-09-25T23:26:44.847186+02:00"
-    description: ejabberd XMPP server helm chart Milos
+    description: ejabberd XMPP server helm chart
     digest: 11f854db0b9cb5bd7a9382e156a7e97138c6dfde5b34bad774fb185cbec13b5a
     keywords:
     - xmpp
