@@ -2,3 +2,4 @@
 override.yaml
 token
 .DS_Store
+tmp/

@@ -133,7 +133,7 @@ data:
 
     {{- if .Values.acl }}
     acl:
-    {{- toYaml .Values.acl | nindent 6 }}
+    {{- .Values.acl | nindent 6 }}
     {{- else }}
     include_config_file:
       - /opt/ejabberd/conf/acl.yml
@@ -141,7 +141,7 @@ data:
 
     {{- if .Values.accessRules }}
     access_rules:
-    {{- toYaml .Values.accessRules | nindent 6 }}
+    {{- .Values.accessRules | nindent 6 }}
     {{- else }}
     include_config_file:
       - /opt/ejabberd/conf/access-rules.yml
@@ -149,7 +149,7 @@ data:
 
     {{- if .Values.apiPermissions }}
     api_permissions:
-    {{- toYaml .Values.apiPermissions | nindent 6 }}
+    {{- .Values.apiPermissions | nindent 6 }}
     {{- else }}
     include_config_file:
       - /opt/ejabberd/conf/api-permissions.yml
@@ -157,7 +157,7 @@ data:
 
     {{- if .Values.shaper }}
     shaper:
-    {{- toYaml .Values.shaper | nindent 6 }}
+    {{- .Values.shaper | nindent 6 }}
     {{- else }}
     include_config_file:
       - /opt/ejabberd/conf/shaper.yml
@@ -165,7 +165,7 @@ data:
 
     {{- if .Values.shaperRules }}
     shaper_rules:
-    {{- toYaml .Values.shaperRules | nindent 6 }}
+    {{- .Values.shaperRules | nindent 6 }}
     {{- else }}
     include_config_file:
       - /opt/ejabberd/conf/shaper-rules.yml
