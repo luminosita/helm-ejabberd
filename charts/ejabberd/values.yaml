@@ -778,6 +778,9 @@ sqlDatabase:
   ## This works for pgsql, mysql and sqlite. The feature is enabled by default.
   ##
   updateSqlSchema: true
+  ## This works for pgsql. Creates db config file from ENV variables
+  ##
+  envConfig: false
   ##
   ## Alternative you can use flyway as a tool to migrate SQL schema
   ##
