@@ -183,6 +183,10 @@ data:
     default_db: {{ default "mnesia" .Values.sqlDatabase.defaultDb | quote }}
     new_sql_schema: {{ default "false" .Values.sqlDatabase.newSqlSchema | quote }}
     update_sql_schema: {{ default "false" .Values.sqlDatabase.updateSqlSchema | quote }}
+    {{- if .Values.sqlDatabase.envConfig }}
+    include_config_file:
+      - /opt/ejabberd/conf/db-config.yml
+    {{- end }}
     {{- toYaml .Values.sqlDatabase.config | nindent 4 }}
     {{- if (eq (toString .Values.sqlDatabase.config.sql_type) "mssql") }}
     sql_odbc_driver: "/usr/lib/libtdsodbc.so.0"
